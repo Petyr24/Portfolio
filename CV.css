@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root { /*The CSS :root pseudo-class selector is used to select the highest-level parent of a given specification. in the html specification, the :root is essentially equivalent to the html selector. Basically the :root is used to create variables in CSS */
+    --primary-color: #87cee8;
+    --text-color: #727171;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Aclonica', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+/* Common styles */
+img{
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.description {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.subheading {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.pretitle {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+.itemtitle {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 500;
+    margin: 0.8rem 0;
+}
+
+.itemsub {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+/* Layout */
+.container{
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;/*Defines the element as a grid container and establishes a new grid formatting context for its contents */
+    padding: 5rem;
+    background: #070707;
+    grid-template-columns: 1fr 1fr;/* creates 2 columns */
+    gap: 4rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 3rem;
+        gap: 7rem;
+    }
+}
+
+.profile {
+     grid-column: 1 / -1; /*makes the profile take only one column */
+    margin-bottom: 2rem;
+}
+
+.group1 {
+    display: flex;/*By using display flex in parent element, child elements automatically align like column or row with auto width and auto height.*/
+    flex-direction: column;
+    gap: 5rem;/*adds 5rem gap between the flex items*/
+}
+
+.group2 {
+    display: flex;/*By using display flex in parent element, child elements automatically align like column or row with auto width and auto height.*/
+    flex-direction: column;
+    gap: 5rem;/*adds 5rem gap between the flex items*/
+}
+
+.group3 {
+    max-width: 700px;
+    width: 100px;
+    margin: 0 auto;
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+.group3 div {
+    flex: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .profile {
+        margin-bottom: 0;
+    }
+    .group3 {
+        flex-direction: column;
+    }
+}
+
+/* Profile */
+.profile_cont {
+    display: flex; /* By using display flex in parent element, child elements automatically align like column or row with auto width and auto height.*/
+    gap: 2rem;
+}
+
+.mypic {
+    max-width: 250px;
+}
+
+.firstname {
+    color: white;
+    font-weight: 200;
+    font-size: clamp(2rem, 8vw, 4rem); /*The clamp() CSS function clamps a middle value within a range of values between a defined minimum bound and a maximum bound*/
+    text-transform: uppercase;
+    display: block;/*A block-level element always starts on a new line and takes u0p the full width available (stretches out to the left and right as far as it can).*/
+    margin-bottom: -0.8rem;/*takes the next row a little bit upper*/
+}
+
+.lastname {
+    color: var(--primary-color);/*The var() CSS function can be used to insert the value of a custom property (sometimes called a "CSS variable") instead of any part of a value of another property*/
+    font-weight: 700;
+    font-size: clamp(2.5rem, 15vw, 7rem);/*vw means view weight*/
+    text-transform: uppercase;
+    display: block;
+}
+
+.profiletits {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.downloadbtn {
+    display: block;
+    text-decoration: underline;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+
+.downloadbtn:hover {
+    color: var(--primary-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .profile_cont {
+        flex-direction: column; /*The flex-direction CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).*/
+    }
+}
+
+/* Expertise */
+.skill-list {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    line-height: 2;
+}
+
+/* Reference */
+.refitem {
+    margin-top: 2rem;
+}
+
+.refname {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* Education */
+.eduitem {
+    margin-top: 2rem;
+}
+
+/* certification */
+.certitem {
+    margin-top: 2rem;
+}
+
+/* Experience */
+.expitem {
+    margin-top: 2rem;
+}
+
+/* Awards */
+.awarditem {
+    margin-top: 2rem;
+}
+
+/* Interest */
+.interestitems{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. */
+    gap: 2rem;
+}
+
+.interestitem {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+}
+
+/* Socials */
+.socialitems {
+    margin-top: 2rem;
+}
+
+.socialitem {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.socialitem:hover {
+    color: var(--primary-color);
+}
+
+hr {
+    grid-column: 1/-1;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    border-top: 2px solid rgba(128, 128, 128, 0.229);
+}
+
+@media only screen and (max-width:768px) {
+    hr {
+        margin: 0 auto;
+    }
+}
